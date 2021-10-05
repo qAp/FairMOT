@@ -5,6 +5,13 @@ from __future__ import print_function
 import torch
 import numpy as np
 
+
+
+def mkdirs(d):
+    if not osp.exists(d):
+        os.makedirs(d)
+
+
 class AverageMeter(object):
     """Computes and stores the average and current value"""
     def __init__(self):
