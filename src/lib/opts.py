@@ -69,6 +69,10 @@ class opts(object):
                              help='input width. -1 for default from dataset.')
     
     # train
+    self.parser.add_argument(
+        '--root_dir', type=str, 
+        default=os.path.join(os.path.dirname(__file__), '..', '..'),
+        help='Root directory for saving training outputs.')
     self.parser.add_argument('--lr', type=float, default=1e-4,
                              help='learning rate for batch size 12.')
     self.parser.add_argument('--lr_step', type=str, default='20',
@@ -192,7 +196,6 @@ class opts(object):
       opt.chunk_sizes.append(slave_chunk_size)
     print('training chunk_sizes:', opt.chunk_sizes)
 
-    opt.root_dir = os.path.join(os.path.dirname(__file__), '..', '..')
     opt.exp_dir = os.path.join(opt.root_dir, 'exp', opt.task)
     opt.save_dir = os.path.join(opt.exp_dir, opt.exp_id)
     opt.debug_dir = os.path.join(opt.save_dir, 'debug')
