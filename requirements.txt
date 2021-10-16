@@ -10,4 +10,4 @@ lap
 openpyxl
 Pillow
 tensorboardX
-fvcore
+fvcore==0.1.5.post20210924
